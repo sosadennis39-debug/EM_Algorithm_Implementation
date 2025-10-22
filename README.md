@@ -4,14 +4,42 @@
 
 This repository contains a complete implementation of the EM algorithm for fitting a bimodal Gaussian Mixture Model to the Old Faithful geyser dataset.
 
-## Files
+## 📁 Project Structure
 
-- `em_algorithm.py` - Basic implementation
-- `em_algorithm_complete.py` - Complete implementation with all features
-- `EM_Algorithm_Implementation.ipynb` - Jupyter notebook with detailed explanations
-- `README.md` - This file
+```
+AML_HW3/
+├── 📄 AML_HW_3_2025_FINAL.pdf          # Assignment PDF
+├── 🐍 em_algorithm_complete.py         # Complete EM algorithm implementation
+├── 📓 EM_Algorithm_Implementation.ipynb # Main Jupyter notebook
+├── 📄 EM_Algorithm_Implementation.pdf   # Notebook export
+├── 📁 HW3-2/                           # Additional notebook version
+│   └── 📓 EM_Algorithm_Implementation.ipynb
+├── 📁 images/                          # Generated visualizations
+│   ├── 🖼️ em_results.png              # EM clustering results
+│   ├── 🖼️ em_vs_kmeans.png           # EM vs K-means comparison
+│   └── 🖼️ faithful_data.png          # Original data visualization
+├── 🐍 test_em.py                      # Test script
+└── 📄 README.md                       # This file
+```
 
-## Problem Requirements (40 pts total)
+## 🚀 Quick Start
+
+### Running the Complete Implementation
+```bash
+python3 em_algorithm_complete.py
+```
+
+### Using the Jupyter Notebook
+```bash
+jupyter notebook EM_Algorithm_Implementation.ipynb
+```
+
+### Running Tests
+```bash
+python3 test_em.py
+```
+
+## 📋 Problem Requirements (40 pts total)
 
 ### 1. Data Loading and Visualization (2 pts)
 - Parse Old Faithful geyser data as 2D feature vectors
@@ -52,75 +80,119 @@ Where r_ik = P(z_i = k | x_i) is the responsibility of cluster k for data point 
 - Analyze differences between soft and hard clustering
 - Discuss cluster shape assumptions
 
-## Key Features
+## ✨ Key Features
 
-### EM Algorithm Implementation
-- **Soft Clustering:** Provides probabilistic cluster assignments
-- **Diagonal Covariance:** Assumes Σ_k = diag(σ²_1, σ²_2, ..., σ²_d)
-- **Convergence Detection:** Log-likelihood-based termination
-- **Trajectory Tracking:** Records mean vector evolution
+### 🔬 EM Algorithm Implementation
+- **🎯 Soft Clustering:** Provides probabilistic cluster assignments
+- **📐 Diagonal Covariance:** Assumes Σ_k = diag(σ²_1, σ²_2, ..., σ²_d)
+- **🔄 Convergence Detection:** Log-likelihood-based termination
+- **📈 Trajectory Tracking:** Records mean vector evolution
 
-### Visualization
-- Original data scatter plot
-- EM clustering results
-- Log-likelihood convergence plot
-- Mean vector trajectories
-- Cluster assignment probabilities
-- K-means comparison
+### 📊 Visualization Features
+- **📈 Original Data Plot:** Scatter plot of Old Faithful geyser data
+- **🎨 EM Clustering Results:** Probabilistic cluster assignments
+- **📉 Log-likelihood Convergence:** Iteration vs likelihood plot
+- **🔄 Mean Vector Trajectories:** Evolution of cluster centers
+- **🎯 Cluster Assignment Probabilities:** Soft clustering visualization
+- **⚖️ EM vs K-means Comparison:** Side-by-side clustering comparison
 
-## Results
+## 📊 Results
 
 The implementation successfully:
-- Loads 272 data points from Old Faithful geyser
-- Converges in 8 iterations with tolerance 1e-6
-- Identifies two distinct clusters:
-  - Cluster 1: Short eruptions (~2.04 min) with short waiting times (~54.5 min)
-  - Cluster 2: Long eruptions (~4.29 min) with long waiting times (~80.0 min)
-- Provides probabilistic assignments for each data point
 
-## Analysis
+### 📈 Dataset Processing
+- **📊 Data Points:** Loads 272 observations from Old Faithful geyser
+- **⚡ Convergence:** Converges in 8 iterations with tolerance 1e-6
+- **🎯 Clusters Identified:** Two distinct eruption patterns
 
-**EM vs K-means:**
-1. **Soft vs Hard Clustering:** EM provides probabilistic assignments, K-means provides hard assignments
-2. **Cluster Shapes:** EM can model elliptical clusters, K-means assumes spherical clusters
-3. **Results:** Both methods give similar results for this dataset due to well-separated, roughly spherical clusters
-4. **Flexibility:** EM provides more detailed probabilistic information and can model complex cluster shapes
+### 🔍 Cluster Analysis
+- **🌋 Cluster 1:** Short eruptions (~2.04 min) with short waiting times (~54.5 min)
+- **🌋 Cluster 2:** Long eruptions (~4.29 min) with long waiting times (~80.0 min)
+- **📊 Probabilistic Assignments:** Soft clustering provides probability distributions
 
-## Usage
+### 📸 Generated Visualizations
+All plots are saved in the `images/` folder:
+- `faithful_data.png` - Original dataset visualization
+- `em_results.png` - EM clustering results with probabilistic assignments
+- `em_vs_kmeans.png` - Comparison between EM and K-means algorithms
 
-### Running the Complete Implementation
-```bash
-python3 em_algorithm_complete.py
-```
+## 🔍 Analysis
 
-### Using the Jupyter Notebook
-```bash
-jupyter notebook EM_Algorithm_Implementation.ipynb
-```
+### ⚖️ EM vs K-means Comparison
 
-## Dependencies
+| Aspect | EM Algorithm | K-means |
+|--------|-------------|---------|
+| **🎯 Assignment Type** | Soft (probabilistic) | Hard (deterministic) |
+| **📐 Cluster Shape** | Elliptical (diagonal covariance) | Spherical |
+| **📊 Information** | Detailed probability distributions | Binary assignments |
+| **🔄 Flexibility** | Models complex cluster shapes | Assumes spherical clusters |
 
-- numpy
-- matplotlib
-- scipy
-- scikit-learn
+### 🎯 Key Findings
+1. **🎲 Soft vs Hard Clustering:** EM provides probabilistic assignments, K-means provides hard assignments
+2. **📐 Cluster Shapes:** EM can model elliptical clusters, K-means assumes spherical clusters  
+3. **📊 Results:** Both methods give similar results for this dataset due to well-separated, roughly spherical clusters
+4. **🔧 Flexibility:** EM provides more detailed probabilistic information and can model complex cluster shapes
 
-## Installation
+## 🛠️ Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| **numpy** | Numerical computations and array operations |
+| **matplotlib** | Data visualization and plotting |
+| **scipy** | Scientific computing utilities |
+| **scikit-learn** | Machine learning algorithms (K-means comparison) |
+
+## 📦 Installation
 
 ```bash
 pip install numpy matplotlib scipy scikit-learn
 ```
 
-## Data Source
+## 🎯 Usage Examples
+
+### 📊 Running the Complete Implementation
+```bash
+python3 em_algorithm_complete.py
+```
+*Generates all visualizations and saves them to the `images/` folder*
+
+### 📓 Interactive Jupyter Notebook
+```bash
+jupyter notebook EM_Algorithm_Implementation.ipynb
+```
+*Provides step-by-step analysis with interactive plots*
+
+### 🧪 Running Tests
+```bash
+python3 test_em.py
+```
+*Validates the EM algorithm implementation*
+
+## 📊 Data Source
 
 The Old Faithful geyser data is sourced from:
-https://www.stat.cmu.edu/~larry/all-of-statistics/=data/faithful.dat
+**🔗 [CMU Statistics Data Archive](https://www.stat.cmu.edu/~larry/all-of-statistics/=data/faithful.dat)**
 
-The dataset contains 272 observations of:
-- Eruption duration (minutes)
-- Waiting time to next eruption (minutes)
+### 📈 Dataset Characteristics
+- **📊 Size:** 272 observations
+- **📏 Features:** 2D feature vectors
+  - **⏱️ Eruption Duration:** Time in minutes
+  - **⏳ Waiting Time:** Time to next eruption in minutes
+- **🎯 Purpose:** Demonstrate bimodal clustering patterns
 
-## References
+## 📚 References
 
-- Hardle, W. (1991) Smoothing Techniques with Implementation in S. New York: Springer.
-- Azzalini, A. and Bowman, A. W. (1990). A look at some data on the Old Faithful geyser. Applied Statistics 39, 357-365.
+- **Hardle, W.** (1991) Smoothing Techniques with Implementation in S. New York: Springer.
+- **Azzalini, A. and Bowman, A. W.** (1990). A look at some data on the Old Faithful geyser. Applied Statistics 39, 357-365.
+
+---
+
+## 📝 License
+
+This project is part of CS5785 Applied Machine Learning coursework at Cornell University.
+
+## 👨‍💻 Author
+
+**Student:** sosadennis39-debug  
+**Course:** CS5785 Applied Machine Learning  
+**Assignment:** Homework 3 - Problem 2
