@@ -46,16 +46,30 @@ python3 test_em.py
 - Plot the data points on a 2D plane
 
 ### 2. E-step Formula (3 pts)
-**Formula:** P(z=k|x) = P(z=k,x) / P(x) = P(x|z=k) * P(z=k) / Σ_l P(x|z=l) * P(z=l)
+**Formula:** 
+```
+P(z=k|x) = P(z=k,x) / P(x) = P(x|z=k) * P(z=k) / Σ_l P(x|z=l) * P(z=l)
+```
 
 This computes the posterior probability that data point x belongs to cluster k.
 
 ### 3. M-step Formulas (5 pts)
-**Mean:** μ_k = Σ_i r_ik * x_i / Σ_i r_ik
-**Covariance:** Σ_k = Σ_i r_ik * (x_i - μ_k)(x_i - μ_k)^T / Σ_i r_ik
-**Weights:** φ_k = Σ_i r_ik / n
+**Mean:** 
+```
+μ_k = Σ_i r_ik * x_i / Σ_i r_ik
+```
 
-Where r_ik = P(z_i = k | x_i) is the responsibility of cluster k for data point i.
+**Covariance:** 
+```
+Σ_k = Σ_i r_ik * (x_i - μ_k)(x_i - μ_k)^T / Σ_i r_ik
+```
+
+**Weights:** 
+```
+φ_k = Σ_i r_ik / n
+```
+
+Where `r_ik = P(z_i = k | x_i)` is the responsibility of cluster k for data point i.
 
 ### 4. EM Algorithm Implementation (25 pts)
 
@@ -66,7 +80,7 @@ Where r_ik = P(z_i = k | x_i) is the responsibility of cluster k for data point 
 
 #### 4.2 Termination Criterion (5 pts)
 **Chosen criterion:** Log-likelihood convergence with tolerance 1e-6
-- Algorithm stops when |L(t) - L(t-1)| < tolerance
+- Algorithm stops when `|L(t) - L(t-1)| < tolerance`
 - Ensures convergence to a local optimum
 - Standard and robust convergence criterion
 
@@ -84,7 +98,7 @@ Where r_ik = P(z_i = k | x_i) is the responsibility of cluster k for data point 
 
 ### 🔬 EM Algorithm Implementation
 - **🎯 Soft Clustering:** Provides probabilistic cluster assignments
-- **📐 Diagonal Covariance:** Assumes Σ_k = diag(σ²_1, σ²_2, ..., σ²_d)
+- **📐 Diagonal Covariance:** Assumes `Σ_k = diag(σ²_1, σ²_2, ..., σ²_d)`
 - **🔄 Convergence Detection:** Log-likelihood-based termination
 - **📈 Trajectory Tracking:** Records mean vector evolution
 
